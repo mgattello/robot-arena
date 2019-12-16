@@ -1,16 +1,17 @@
-import React from 'react';
-import './Card.css';
+import React, { Fragment } from 'react';
 import 'tachyons';
 
-const Card = () => {
+const Card = ({ name, email, id }) => {
         return(
-            <div className="bg-light-green dib br3 pa3 ma2 grow bw2 shadow-5">
-                <img src="" alt="robots" src="http://robohash.org/test?200x200"/>
+            <Fragment>
+            <div className="tc bg-light-green dib br3 pa3 ma2 grow bw2 shadow-5">
+                <img src="" alt="robots" src={`http://robohash.org/${id}?200x200`}/>
                 <div>
-                    <h2>Jane Doe</h2>
-                    <p>jane.s@gmail.com</p>
+                    <h2>{ name }</h2>
+                    <p> { email }</p>
                 </div>
             </div>
+            </Fragment>
         );
 }
 

@@ -1,0 +1,12 @@
+@font-face {
+    font-family: 'Viktors Littl Creepy Horror Regular';
+    font-style: normal;
+    font-weight: normal;
+    src: local('Viktors Littl Creepy Horror Regular'), url('Viktors Littl Creepy Horror.woff') format('woff');
+}
+
+h1{
+    font-size: 90px;
+    margin: 15px;
+    font-family: 'Viktors Littl Creepy Horror Regular';
+}

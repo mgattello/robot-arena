@@ -1,17 +1,12 @@
 import React from 'react';
 import ReactDOM from 'react-dom';
 import './index.css';
-import Card from './Card.js';
+import App from './App.js';
 import * as serviceWorker from './serviceWorker';
+// Destructive because is not exports default
 
-ReactDOM.render(
-    <div>
-        <Card/>
-        <Card/>
-        <Card/>
-    </div>
-    
-    ,document.getElementById('root'));
+
+ReactDOM.render(< App />, document.getElementById('root'));
 
 // If you want your app to work offline and load faster, you can change
 // unregister() to register() below. Note this comes with some pitfalls.
