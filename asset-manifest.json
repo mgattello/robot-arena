@@ -1,0 +1,26 @@
+{
+  "files": {
+    "main.css": "/robotarena/static/css/main.79d72663.chunk.css",
+    "main.js": "/robotarena/static/js/main.07d7b075.chunk.js",
+    "main.js.map": "/robotarena/static/js/main.07d7b075.chunk.js.map",
+    "runtime-main.js": "/robotarena/static/js/runtime-main.c442df09.js",
+    "runtime-main.js.map": "/robotarena/static/js/runtime-main.c442df09.js.map",
+    "static/css/2.eb45ad44.chunk.css": "/robotarena/static/css/2.eb45ad44.chunk.css",
+    "static/js/2.cf5135f0.chunk.js": "/robotarena/static/js/2.cf5135f0.chunk.js",
+    "static/js/2.cf5135f0.chunk.js.map": "/robotarena/static/js/2.cf5135f0.chunk.js.map",
+    "index.html": "/robotarena/index.html",
+    "precache-manifest.3b55ff98787fcc775ee34ec0d4aa7d4a.js": "/robotarena/precache-manifest.3b55ff98787fcc775ee34ec0d4aa7d4a.js",
+    "service-worker.js": "/robotarena/service-worker.js",
+    "static/css/2.eb45ad44.chunk.css.map": "/robotarena/static/css/2.eb45ad44.chunk.css.map",
+    "static/css/main.79d72663.chunk.css.map": "/robotarena/static/css/main.79d72663.chunk.css.map",
+    "static/js/2.cf5135f0.chunk.js.LICENSE": "/robotarena/static/js/2.cf5135f0.chunk.js.LICENSE",
+    "static/media/App.css": "/robotarena/static/media/Viktors Littl Creepy Horror.7c784787.woff"
+  },
+  "entrypoints": [
+    "static/js/runtime-main.c442df09.js",
+    "static/css/2.eb45ad44.chunk.css",
+    "static/js/2.cf5135f0.chunk.js",
+    "static/css/main.79d72663.chunk.css",
+    "static/js/main.07d7b075.chunk.js"
+  ]
+}
