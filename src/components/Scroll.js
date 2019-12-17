@@ -1,4 +1,4 @@
-import React, { Component, Fragment } from 'react';
+import React from 'react';
 import { render } from '@testing-library/react';
 
 // It's a Wrap Components, it can use children
