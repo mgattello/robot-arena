@@ -1,19 +1,31 @@
 import React, { Component } from 'react';
+import { connect } from 'react-redux';
 import CardList from '../components/CardList';
 import Scroll from '../components/Scroll';
 import SearchBox from '../components/SearchBox';
 import ErrorBoundry from '../components/ErrorBoundry';
 import './App.css';
+import { setSearchField, requestRobots } from '../actions';
 
+// Tells to the connect function which state to use
+const mapStateToProps = state => {
+    return {
+        searchField: state.searchRobots.searchField,
+        robots: state.requestRobots.robots,
+        isPending: state.requestRobots.isPending,
+        error: state.requestRobots.error
+    }
+}
+
+// Dispatch the actions - Flux Pattern
+const mapDispatchToProps = (dispatch) => {
+    return {
+        onSearchChange: (event) => dispatch(setSearchField(event.target.value)),
+        onRequestRobot: () => dispatch(requestRobots())
+    }
+}
 
 class App extends Component {
-    constructor(){
-        super();
-        this.state = {
-            robots: [],
-            searchfield: '',
-        }
-    }
     // Built in REACT: Lifecycle methods
     // Mounting Order
     // 1.constructor()
@@ -21,30 +33,21 @@ class App extends Component {
     // 3.render()
     // 4.componentDidMount()
     componentDidMount(){
-        fetch('https://jsonplaceholder.typicode.com/users')
-            .then( response => {return response.json();})
-            .then( users => {this.setState({robots: users});})
+        this.props.onRequestRobot();
     };
-
-    // Everytime you use your own methods components use this syntax
-    // functionName = () => {}    
-    onSearchChange = (event) => {
-        // Allows changes on state
-        this.setState({searchfield: event.target.value});
-    }
-
+    
     render(){
-        const { robots, searchfield } = this.state;
+        const { searchField, onSearchChange, robots, isPending } = this.props;
         const filterRobots = robots.filter(robot => {
-            return robot.name.toLowerCase().includes(searchfield.toLowerCase());
+            return robot.name.toLowerCase().includes(searchField.toLowerCase());
         });
 
-        return !robots.length ? 
+        return isPending ? 
             <h1 className="tc">loading...</h1> :
             (
                 <div className="tc">
                     <h1>RobotArena</h1>
-                    <SearchBox searchChange={this.onSearchChange}/>
+                    <SearchBox searchChange={onSearchChange}/>
                     <Scroll>
                         <ErrorBoundry>
                             <CardList robots={filterRobots}/>
@@ -56,5 +59,5 @@ class App extends Component {
     }
 }
 
-
-export default App;
+// Connect is an High order function: returns another function
+export default connect(mapStateToProps, mapDispatchToProps)(App);
